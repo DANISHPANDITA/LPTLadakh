@@ -3,7 +3,6 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { collection, doc, getDoc, getDocs } from "firebase/firestore/lite";
 import { db } from "../components/firebase";
-import img1 from "../img/project_back.jpeg";
 import Head from "next/head";
 
 function Projects() {
