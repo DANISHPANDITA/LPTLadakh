@@ -19,28 +19,30 @@ function Banner() {
     fetchLinks();
   }, []);
   const Bannerimg = Object.values(Banner);
-  return (
-    <div className="bg-orange-100">
-      <Carousel
-        infiniteLoop={true}
-        interval={1200}
-        autoPlay={true}
-        autoFocus={true}
-        showThumbs={false}
-        showStatus={false}
-      >
-        {Bannerimg.map((bb) => (
-          <div>
-            <img
-              src={bb}
-              className="py-2 w-9/12 h-[620px] mx-auto mt-4 rounded-lg"
-              alt=""
-            />
-          </div>
-        ))}
-      </Carousel>
-    </div>
-  );
+  if (Bannerimg.length > 0) {
+    return (
+      <div className="bg-orange-100">
+        <Carousel
+          infiniteLoop={true}
+          interval={1200}
+          autoPlay={true}
+          autoFocus={true}
+          showThumbs={false}
+          showStatus={false}
+        >
+          {Bannerimg.map((bb) => (
+            <div>
+              <img
+                src={bb}
+                className="py-2 w-9/12 h-[620px] mx-auto mt-4 rounded-lg"
+                alt=""
+              />
+            </div>
+          ))}
+        </Carousel>
+      </div>
+    );
+  }
 }
 
 export default Banner;
