@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@badrap/bar-of-progress": "^0.2.2",
     "@material-tailwind/react": "^1.2.5",
     "firebase": "^9.16.0",
     "firebase-tools": "^11.21.0",

@@ -34,7 +34,7 @@ function Banner() {
           <div>
             <img
               src={bb}
-              className="py-2 w-9/12 h-[620px] mx-auto mt-4 rounded-lg"
+              className="py-2 w-9/12 h-[620px] xs:h-[300px] sm:h-[380px] md:h-[420px] mx-auto mt-4 rounded-lg"
               alt=""
             />
           </div>

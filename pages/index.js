@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { doc, getDoc } from "firebase/firestore/lite";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { db } from "../components/firebase";
 import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
@@ -44,7 +44,6 @@ export async function getServerSideProps(context) {
   const docRef = doc(db, "Pics", "SmallCard");
   const docSnap = await getDoc(docRef);
   const smallCardInfo = docSnap.data();
-  console.log(smallCardInfo);
   return {
     props: {
       SmallCardInfo: smallCardInfo,
