@@ -8,7 +8,7 @@ import Banner from "../components/Banner";
 import MainCard from "../components/MainCard";
 import CardSmall from "../components/Card";
 import Footer from "../components/Footer";
-const Home: NextPage = ({ SmallCardInfo }) => {
+const Home: NextPage<Props> = ({ SmallCardInfo }) => {
   if (Object.values(SmallCardInfo).length > 0) {
     return (
       <div className="bg-amber-100">
