@@ -20,7 +20,7 @@ function Activities({ BG, ACTIVITIES }) {
           </p>
         </Fade>
 
-        <div className="bg-gray-100 p-4 text-lg mt-16 mb-4 font-nunito flex flex-col space-y-3 text-justify w-10/12 mx-auto text-gray-800 font-semibold xs:text-xs sm:text-base md:text-base">
+        <div className="bg-gray-100 p-4 text-lg mt-16 mb-4 font-nunito flex flex-col space-y-3 text-justify w-10/12 mx-auto text-gray-800 font-semibold xs:text-sm sm:text-base md:text-base">
           {Object.values(ACTIVITIES).map((activity) => (
             <Fade cascade damping={0.3} triggerOnce={true}>
               <p>&#8226; {activity}</p>

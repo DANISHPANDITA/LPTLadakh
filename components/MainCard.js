@@ -19,7 +19,7 @@ function MainCard() {
   }, []);
   return (
     <div className="font-nunito font-semibold flex flex-col lg:flex-row xl:flex-row xxl:flex-row items-center w-11/12 mx-auto bg-gradient-to-r from-slate-100 via-[#475f78] to-slate-100 p-2 mt-4 shadow-xl">
-      <div className="flex flex-col space-y-4">
+      <div className="flex flex-col space-y-4 items-center">
         <Slide cascade damping={0.5}>
           <img
             src={CardInfo.picA}
@@ -36,7 +36,7 @@ function MainCard() {
       </div>
       <div>
         <Fade delay={1500}>
-          <p className="text-justify text-base xs:text-xs sm:text-sm mt-1">
+          <p className="text-justify text-base xs:text-sm  mt-1">
             {CardInfo.Info}
           </p>
         </Fade>
