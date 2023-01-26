@@ -9,7 +9,7 @@ import {
 import { useRouter } from "next/router";
 import { doc, getDoc } from "firebase/firestore/lite";
 import { db } from "./firebase";
-import Fade from "react-reveal/Fade";
+import { Fade } from "react-awesome-reveal";
 
 function Navbar() {
   const router = useRouter();
@@ -43,12 +43,12 @@ function Navbar() {
         alt=""
       />
       <div className="flex flex-col items-center">
-        <Fade bottom>
+        <Fade bottom triggerOnce={true}>
           <p className="font-serif font-extrabold text-5xl italic text-[#193548] xs:text-sm sm:text-lg md:text-3xl">
             LADAKH PHANDAY TSOGSPA
           </p>
         </Fade>
-        <Fade bottom>
+        <Fade bottom triggerOnce={true} delay={500}>
           <p className="font-extrabold text-6xl  text-[#193548] xs:text-xl sm:text-3xl md:text-4xl">
             ལ་དྭགས་ཕན་བདེ་ཚོགས་པ།
           </p>

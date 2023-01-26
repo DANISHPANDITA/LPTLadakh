@@ -5,7 +5,7 @@ import { doc, getDoc } from "firebase/firestore/lite";
 import { db } from "../components/firebase";
 import img from "../img/activities_back.jpg";
 import Head from "next/head";
-import Fade from "react-reveal/Fade";
+import { Fade } from "react-awesome-reveal";
 function Archives({ pics }) {
   var ArchivePicsArr = Object.values(pics);
   if (ArchivePicsArr.length > 0) {
@@ -15,7 +15,7 @@ function Archives({ pics }) {
           <title>Archives</title>
         </Head>
         <Navbar />
-        <Fade top>
+        <Fade top triggerOnce={true}>
           <img
             src={img.src}
             className="h-28 w-3/4 mx-auto mt-6 xs:h-20"

@@ -3,7 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import { db } from "./firebase";
 import { doc, getDoc } from "firebase/firestore/lite";
-import Fade from "react-reveal/Fade";
+import { Fade } from "react-awesome-reveal";
 
 function Banner() {
   const [Banner, setBanner] = useState({});
@@ -24,7 +24,7 @@ function Banner() {
 
   return (
     <div className="bg-gradient-to-r from-slate-100 via-orange-200 to-slate-100">
-      <Fade bottom delay={1500}>
+      <Fade bottom delay={1500} triggerOnce={true}>
         <Carousel
           infiniteLoop={true}
           interval={1200}

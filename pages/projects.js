@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import { collection, doc, getDoc, getDocs } from "firebase/firestore/lite";
 import { db } from "../components/firebase";
 import Head from "next/head";
-import { Fade, Flip } from "react-reveal";
+import { Fade, Flip } from "react-awesome-reveal";
 
 function Projects({ BG, Projects }) {
   if (Object.values(BG).length > 0 && Object.values(Projects).length > 0) {
@@ -14,7 +14,7 @@ function Projects({ BG, Projects }) {
           <title>Projects</title>
         </Head>
         <Navbar />
-        <Fade bottom>
+        <Fade bottom triggerOnce={true}>
           <img src={BG.Bg} className="h-28 w-3/4 mx-auto mt-6 xs:h-20" alt="" />
           <p className="font-nunito text-center text-5xl text-gray-100  font-extrabold -mt-20 xs:text-2xl xs:-mt-12">
             OUR PROJECTS
@@ -23,7 +23,7 @@ function Projects({ BG, Projects }) {
         <div className="flex flex-col space-y-4">
           {Projects.map((project) => (
             <div className="flex flex-col w-10/12 mx-auto shadow-2xl mt-24 rounded-xl p-3">
-              <Flip bottom delay={1000}>
+              <Fade cascade damping={0.3} triggerOnce={true}>
                 <p className="font-nunito text-3xl text-gray-800 font-bold xs:text-sm sm:text-xl md:text-2xl">
                   {project.Header}
                 </p>
@@ -37,7 +37,7 @@ function Projects({ BG, Projects }) {
                     {project.Info}
                   </p>
                 </div>
-              </Flip>
+              </Fade>
             </div>
           ))}
         </div>
