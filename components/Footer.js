@@ -27,9 +27,11 @@ function Footer() {
     fetchLinks();
   }, []);
   return (
-    <div className="font-nunito bg-gray-800 text-gray-100  flex flex-row sm:flex-col xs:flex-col md:flex-col justify-between p-4">
-      <div className="w-1/4 lg:w-1/2 xl:w-1/2 md:w-full xs:w-full sm:w-full">
-        <p className="font-semibold mb-3 text-lg ">Contact us</p>
+    <div className="font-nunito bg-gradient-to-r from-gray-800 via-gray-600 to-gray-800 text-gray-100  flex flex-row sm:flex-col xs:flex-col md:flex-col justify-between p-4">
+      <div className="w-1/4 lg:w-1/2 xl:w-1/2 md:w-full xs:w-full sm:w-full text-base xs:text-xs sm:text-xs md:text-base">
+        <p className="font-semibold mb-3 text-lg xs:text-sm sm:text-base md:text-base">
+          Contact us
+        </p>
         <p>{Contacts.Address}</p>
         <p className="mb-0.5">
           Phone : <span>{Contacts.Phone}</span>
@@ -40,7 +42,9 @@ function Footer() {
       </div>
 
       <div className="flex flex-col items-center">
-        <p className="font-semibold text-lg">Follow us on</p>
+        <p className="font-semibold text-lg xs:text-sm sm:text-base md:text-base">
+          Follow us on
+        </p>
 
         <Tooltip
           placement="top-start"

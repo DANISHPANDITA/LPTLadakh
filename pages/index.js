@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 export default function Home({ SmallCardInfo }) {
   if (Object.values(SmallCardInfo).length > 0) {
     return (
-      <div className="bg-amber-100">
+      <div className="bg-gradient-to-r from-slate-100 via-orange-200 to-slate-100">
         <Head>
           <title>Ladakh Phanday Tsogspa</title>
           <link rel="icon" href="/favicon.ico" />
