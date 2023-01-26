@@ -8,7 +8,7 @@ import Banner from "../components/Banner";
 import MainCard from "../components/MainCard";
 import CardSmall from "../components/Card";
 import Footer from "../components/Footer";
-const Home: NextPage<Props> = ({ SmallCardInfo }) => {
+export default function Home({ SmallCardInfo }){
   if (Object.values(SmallCardInfo).length > 0) {
     return (
       <div className="bg-amber-100">
@@ -41,13 +41,10 @@ const Home: NextPage<Props> = ({ SmallCardInfo }) => {
     );
   }
 };
-
-export default Home;
 export async function getServerSideProps(context) {
   const docRef = doc(db, "Pics", "SmallCard");
   const docSnap = await getDoc(docRef);
   const smallCardInfo = docSnap.data();
-  console.log(smallCardInfo);
   return {
     props: {
       SmallCardInfo: smallCardInfo,
