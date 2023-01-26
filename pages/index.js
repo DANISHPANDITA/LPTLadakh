@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import Head from "next/head";
 import { doc, getDoc } from "firebase/firestore/lite";
 import React, { useEffect, useState } from "react";
@@ -8,8 +7,7 @@ import Banner from "../components/Banner";
 import MainCard from "../components/MainCard";
 import CardSmall from "../components/Card";
 import Footer from "../components/Footer";
-export default function Home({ SmallCardInfo }:{SmallCardInfo:object}){
-  console.log(typeof(SmallCardInfo))
+export default function Home({ SmallCardInfo }) {
   if (Object.values(SmallCardInfo).length > 0) {
     return (
       <div className="bg-amber-100">
@@ -41,7 +39,7 @@ export default function Home({ SmallCardInfo }:{SmallCardInfo:object}){
       </div>
     );
   }
-};
+}
 export async function getServerSideProps(context) {
   const docRef = doc(db, "Pics", "SmallCard");
   const docSnap = await getDoc(docRef);
