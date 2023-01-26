@@ -1,6 +1,5 @@
 import { IconButton, Tooltip } from "@material-tailwind/react";
 import React, { useEffect, useState } from "react";
-import img from "../img/img_logo.jpg";
 import { doc, getDoc } from "firebase/firestore/lite";
 import { db } from "../components/firebase";
 function Footer() {
@@ -54,7 +53,7 @@ function Footer() {
               window.open(Contacts.Fb, "_blank");
             }}
           >
-            <i class="fa-brands fa-facebook-f"></i>
+            <i className="fa-brands fa-facebook-f"></i>
           </IconButton>
         </Tooltip>
 
