@@ -1,30 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import { db } from "./firebase";
-import { doc, getDoc } from "firebase/firestore/lite";
 import { Fade } from "react-awesome-reveal";
 
-function Banner() {
-  const [Banner, setBanner] = useState({});
-  useEffect(() => {
-    const fetchLinks = async () => {
-      const docRef = doc(db, "Pics", "Banner");
-      const docSnap = await getDoc(docRef);
-
-      if (docSnap.exists()) {
-        setBanner(docSnap.data());
-      } else {
-        alert("There is a problem with this page.");
-      }
-    };
-    fetchLinks();
-  }, []);
-  const Bannerimg = Object.values(Banner);
-
+function Banner({ bannerImgs }) {
+  const Bannerimg = Object.values(bannerImgs);
   return (
     <div className="bg-gradient-to-r from-slate-100 via-orange-200 to-slate-100">
-      <Fade bottom delay={1500} triggerOnce={true}>
+      <Fade bottom delay={2000} triggerOnce={true}>
         <Carousel
           infiniteLoop={true}
           interval={1200}
@@ -37,7 +20,7 @@ function Banner() {
             <div>
               <img
                 src={bb}
-                className="py-2 w-9/12 h-[620px] xs:h-[250px] sm:h-[380px] md:h-[420px] mx-auto mt-4 rounded-lg"
+                className="w-9/12 h-[620px] xs:h-[250px] sm:h-[380px] md:h-[420px] mx-auto mt-1 rounded-lg"
                 alt=""
               />
             </div>

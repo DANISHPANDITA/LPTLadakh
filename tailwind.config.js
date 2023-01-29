@@ -17,6 +17,7 @@ module.exports = {
       },
       fontFamily: {
         nunito: ["Nunito"],
+        ubuntu: ["Ubuntu"],
       },
     },
   },
