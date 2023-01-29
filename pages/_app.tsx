@@ -21,6 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         description="Info about LADAKH PHANDAY TSOGSPA and its projects and recent activities."
       />
       <Head>
+        <meta name="google-site-verification" content="hCIam5lSdw6v-ZWOBW4Cg6-07BFgIdssvQSMZ5bN7fk" />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
