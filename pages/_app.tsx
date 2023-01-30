@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { NextSeo } from "next-seo";
+import SEO from "@bradgarropy/next-seo"
 import Head from "next/head";
 import ProgressBar from "@badrap/bar-of-progress";
 import Router from "next/router";
@@ -16,9 +16,14 @@ function MyApp({ Component, pageProps }: AppProps) {
   Router.events.on("routeChangeError", progress.finish);
   return (
     <>
-      <NextSeo
+      <SEO   
+        keywords={["nonprofit organizations", "ladakh"]}
         title="LADAKH PHANDAY TSOGSPA"
-        description="Info about LADAKH PHANDAY TSOGSPA and its projects and recent activities."
+        facebook={{image: "/facebook.png",
+        url: "https://www.facebook.com/LadakhPhandayTsogspa276/",
+        type: "website",
+    }}
+        description="An organization that works on issues like education, skill development, health, and self-sufficiency since 1990s under three categories - Sewa, Sanskar and Ekta. We also organize camps raising public awareness." 
       />
       <Head>
         <link

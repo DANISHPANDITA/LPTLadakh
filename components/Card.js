@@ -6,7 +6,7 @@ function CardSmall({ img, header, text }) {
       <Fade bottom triggerOnce={true}>
         <img className="w-full rounded-lg" src={img} alt="Pic" />
       </Fade>
-      <div class="px-6 py-4">
+      <div className="px-6 py-4">
         <Fade bottom triggerOnce={true}>
           <div className="font-bold text-center text-xl mb-2 xs:text-base sm:text-base md:text-lg">
             {header}
