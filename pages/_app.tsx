@@ -26,6 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         description="An organization that works on issues like education, skill development, health, and self-sufficiency since 1990s under three categories - Sewa, Sanskar and Ekta. We also organize camps raising public awareness." 
       />
       <Head>
+        <meta name="google-site-verification" content="hCIam5lSdw6v-ZWOBW4Cg6-07BFgIdssvQSMZ5bN7fk" />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
