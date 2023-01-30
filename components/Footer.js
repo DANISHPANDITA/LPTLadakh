@@ -63,7 +63,7 @@ function Footer() {
 
         <img
           src={Logo.logoImg}
-          className="h-32 w-auto mt-4 rounded-full"
+          className="h-36 w-auto mt-4 rounded-full"
           alt=""
         />
       </div>

@@ -52,7 +52,7 @@ export default function Home({
     );
   } else {
     return (
-      <div className="h-screen w-screen">
+      <div className="h-screen w-screen bg-orange-300">
         <ReactLoading type="spokes" color="red" height={667} width={375} />{" "}
       </div>
     );
