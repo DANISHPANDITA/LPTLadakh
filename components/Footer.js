@@ -2,6 +2,7 @@ import { IconButton, Tooltip } from "@material-tailwind/react";
 import React, { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore/lite";
 import { db } from "../components/firebase";
+import Image from "next/image";
 function Footer() {
   const [Contacts, setContacts] = useState({});
   const [Logo, setLogo] = useState({});
@@ -60,10 +61,11 @@ function Footer() {
             <i className="fa-brands fa-facebook-f"></i>
           </IconButton>
         </Tooltip>
-
-        <img
+        <Image
           src={Logo.logoImg}
           className="h-36 w-auto mt-4 rounded-full"
+          width={100}
+          height={100}
           alt=""
         />
       </div>

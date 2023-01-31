@@ -1,5 +1,6 @@
 import { doc, getDoc } from "firebase/firestore/lite";
 import Head from "next/head";
+import Image from "next/image";
 import React from "react";
 import { Fade, Slide } from "react-awesome-reveal";
 import { db } from "../components/firebase";
@@ -12,26 +13,32 @@ function Activities({ BG, ACTIVITIES, Logo }) {
     Object.values(Logo).length > 0
   ) {
     return (
-      <div>
+      <div className="font-ubuntu">
         <Head>
           <title>Activities</title>
         </Head>
         <Navbar logo={Logo} />
         <Fade delay={2000} top triggerOnce={true}>
-          <img src={BG.Bg} className="h-28 w-3/4 mx-auto mt-6 xs:h-20" alt="" />
-          <p className="font-nunito text-center text-5xl text-gray-800  font-extrabold -mt-20 xs:text-base sm:text-3xl lg:md:text-2xl md:text-2xl xs:-mt-12">
+          <Image
+            src={BG.Bg}
+            className="h-28 w-3/4 mx-auto mt-6 xs:h-20"
+            width={50}
+            height={50}
+            alt="Pic"
+          />
+
+          <p className="text-center text-5xl text-gray-800  font-extrabold -mt-20 xs:text-base sm:text-3xl lg:md:text-2xl md:text-2xl xs:-mt-12">
             OUR RECENT ACTIVITIES
           </p>
         </Fade>
 
-        <div className="bg-gray-100 p-4 text-lg mt-16 mb-4 font-nunito flex flex-col space-y-3 text-justify w-10/12 mx-auto text-gray-800 font-semibold xs:text-sm sm:text-base md:text-base">
+        <div className="bg-gray-100 p-4 text-lg mt-16 mb-4 flex flex-col space-y-3 text-justify w-10/12 mx-auto text-gray-800 font-semibold xs:text-sm sm:text-base md:text-base">
           {Object.values(ACTIVITIES).map((activity) => (
             <Fade delay={2200} cascade damping={0.3} triggerOnce={true}>
               <p>&#8226; {activity}</p>
             </Fade>
           ))}
         </div>
-
         <Footer />
       </div>
     );

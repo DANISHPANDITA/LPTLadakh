@@ -6,6 +6,7 @@ import { db } from "../components/firebase";
 import Head from "next/head";
 import { Fade } from "react-awesome-reveal";
 import ReactLoading from "react-loading";
+import Image from "next/image";
 
 function Projects({ BG, Projects, logo }) {
   if (
@@ -14,14 +15,20 @@ function Projects({ BG, Projects, logo }) {
     Object.values(logo).length > 0
   ) {
     return (
-      <div className="bg-gray-100">
+      <div className="font-ubuntu bg-gray-100">
         <Head>
           <title>Projects</title>
         </Head>
         <Navbar logo={logo} />
         <Fade delay={2000} bottom triggerOnce={true}>
-          <img src={BG.Bg} className="h-28 w-3/4 mx-auto mt-6 xs:h-20" alt="" />
-          <p className="font-nunito text-center text-5xl text-gray-100  font-extrabold -mt-20 xs:text-2xl xs:-mt-12">
+          <Image
+            src={BG.Bg}
+            className="h-28 w-3/4 mx-auto mt-6 xs:h-20"
+            width={50}
+            height={50}
+            alt="Pic"
+          />
+          <p className="text-center text-5xl text-gray-100  font-extrabold -mt-20 xs:text-2xl xs:-mt-12">
             OUR PROJECTS
           </p>
         </Fade>
@@ -30,14 +37,15 @@ function Projects({ BG, Projects, logo }) {
             {Projects.map((project) => (
               <div className="flex flex-col w-10/12 mx-auto shadow-2xl mt-24 rounded-xl p-3">
                 <Fade cascade damping={0.3} triggerOnce={true}>
-                  <p className="font-nunito text-3xl text-gray-800 font-bold xs:text-sm sm:text-xl md:text-2xl">
+                  <p className="text-3xl text-gray-800 font-bold xs:text-sm sm:text-xl md:text-2xl">
                     {project.Header}
                   </p>
                   <div className="flex flex-row xs:flex-col sm:flex-col md:flex-col items-center">
-                    <img
-                      className="h-48 w-auto shadow-xl"
+                    <Image
                       src={project.Pic}
-                      alt=""
+                      width={250}
+                      height={350}
+                      alt="Pic"
                     />
                     <p className="font-semibold font-nunito text-gray-700 text-lg ml-3 text-justify xs:text-sm sm:text-base md:text-lg">
                       {project.Info}

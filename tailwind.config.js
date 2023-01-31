@@ -16,7 +16,6 @@ module.exports = {
         xxl: { min: "1536px", max: "1600px" },
       },
       fontFamily: {
-        nunito: ["Nunito"],
         ubuntu: ["Ubuntu"],
       },
     },

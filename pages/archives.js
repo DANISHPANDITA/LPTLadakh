@@ -5,6 +5,7 @@ import { doc, getDoc } from "firebase/firestore/lite";
 import { db } from "../components/firebase";
 import Head from "next/head";
 import { Fade } from "react-awesome-reveal";
+import Image from "next/image";
 function Archives({ pics, Logo, BG }) {
   var ArchivePicsArr = Object.values(pics);
   if (
@@ -19,20 +20,26 @@ function Archives({ pics, Logo, BG }) {
         </Head>
         <Navbar logo={Logo} />
         <Fade delay={2000} top triggerOnce={true}>
-          <img src={BG.Bg} className="h-28 w-3/4 mx-auto mt-6 xs:h-20" alt="" />
-          <p className="font-nunito text-center text-5xl text-gray-800  font-extrabold -mt-20 xs:text-2xl xs:-mt-12">
+          <Image
+            src={BG.Bg}
+            className="h-28 w-3/4 mx-auto mt-6 xs:h-20"
+            width={50}
+            height={50}
+            alt="Pic"
+          />
+          <p className="font-ubuntu text-center text-5xl text-gray-800  font-extrabold -mt-20 xs:text-2xl xs:-mt-12">
             GALLERY
           </p>
         </Fade>
         <Fade delay={2200} cascade damping={0.7}>
           <div className="flex flex-wrap min-w-[150px] justify-between p-5 space-y-4 mt-12">
             {ArchivePicsArr.map((pic) => (
-              <img
+              <Image
                 key={ArchivePicsArr.indexOf(pic)}
-                loading="lazy"
-                className="h-96 w-96"
                 src={pic}
-                alt=""
+                width={400}
+                height={300}
+                alt="Pic"
               />
             ))}
           </div>

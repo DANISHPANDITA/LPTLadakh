@@ -2,6 +2,7 @@ import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import { Fade } from "react-awesome-reveal";
+import Image from "next/image";
 
 function Banner({ bannerImgs }) {
   const Bannerimg = Object.values(bannerImgs);
@@ -17,11 +18,12 @@ function Banner({ bannerImgs }) {
           showStatus={false}
         >
           {Bannerimg.map((bb) => (
-            <div>
-              <img
-                key={Bannerimg.indexOf(bb)}
+            <div key={Bannerimg[bb]}>
+              <Image
                 src={bb}
                 className="w-[500px] h-[620px] xs:h-[250px] sm:h-[380px] md:h-[420px] mx-auto mt-1 rounded-lg"
+                width={500}
+                height={500}
                 alt=""
               />
             </div>
