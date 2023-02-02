@@ -19,13 +19,7 @@ function Activities({ BG, ACTIVITIES, Logo }) {
         </Head>
         <Navbar logo={Logo} />
         <Fade delay={2000} top triggerOnce={true}>
-          <Image
-            src={BG.Bg}
-            className="h-28 w-3/4 mx-auto mt-6 xs:h-20"
-            width={50}
-            height={50}
-            alt="Pic"
-          />
+          <Image src={BG.Bg} width={50} height={50} alt="Pic" />
 
           <p className="text-center text-5xl text-gray-800  font-extrabold -mt-20 xs:text-base sm:text-3xl lg:md:text-2xl md:text-2xl xs:-mt-12">
             OUR RECENT ACTIVITIES

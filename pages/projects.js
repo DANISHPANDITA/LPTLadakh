@@ -43,6 +43,7 @@ function Projects({ BG, Projects, logo }) {
                   <div className="flex flex-row xs:flex-col sm:flex-col md:flex-col items-center">
                     <Image
                       src={project.Pic}
+                      className="rounded-xl"
                       width={250}
                       height={350}
                       alt="Pic"

@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <SEO   
-        keywords={["nonprofit organizations", "ladakh"]}
+        keywords={["nonprofit organization", "Ladakh", "PHANDAY", "TSOGSPA", "lpt" , "leh"]}
         title="LADAKH PHANDAY TSOGSPA"
         facebook={{image: "/facebook.png",
         url: "https://www.facebook.com/LadakhPhandayTsogspa276/",
