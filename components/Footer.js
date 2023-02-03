@@ -63,7 +63,7 @@ function Footer() {
         </Tooltip>
         <Image
           src={Logo.logoImg}
-          className="h-36 w-auto mt-4 rounded-full"
+          className="mt-4 rounded-full"
           width={100}
           height={100}
           alt=""

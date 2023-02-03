@@ -15,7 +15,7 @@ function Navbar({ logo }) {
   return (
     <Slide triggerOnce={true} duration={1300} direction="down">
       <div
-        className="flex flex-row justify-between items-center h-36 xs:h-24 sm:h-24 w-full px-2"
+        className="flex flex-row justify-between items-center h-36 xs:h-24 sm:h-24 w-full px-1"
         style={{
           background:
             "linear-gradient(90deg, rgba(71,124,209,1) 14%, rgba(255,255,255,1) 30%, rgba(230,106,101,1) 50%, rgba(54,215,128,1) 69%, rgba(255,252,136,1) 86%)",
@@ -81,7 +81,7 @@ function Navbar({ logo }) {
               placement="left-end"
               animate={{
                 mount: { y: 0 },
-                unmount: { y: 25 },
+                unmount: { y: 30 },
               }}
             >
               <MenuHandler>

@@ -8,31 +8,20 @@ import { Fade } from "react-awesome-reveal";
 import Image from "next/image";
 function Archives({ pics, Logo, BG }) {
   var ArchivePicsArr = Object.values(pics);
-  if (
-    ArchivePicsArr.length > 0 &&
-    Object.values(BG).length > 0 &&
-    Object.values(Logo).length > 0
-  ) {
+  if (ArchivePicsArr.length > 0 && Object.values(Logo).length > 0) {
     return (
-      <div className="bg-gray-200">
+      <div className="bg-gradient-to-r from-slate-100 via-[#87a0bb] to-slate-100">
         <Head>
           <title>Archives</title>
         </Head>
         <Navbar logo={Logo} />
         <Fade delay={2000} top triggerOnce={true}>
-          <Image
-            src={BG.Bg}
-            className="h-28 w-3/4 mx-auto mt-6 xs:h-20"
-            width={50}
-            height={50}
-            alt="Pic"
-          />
-          <p className="font-ubuntu text-center text-5xl text-gray-800  font-extrabold -mt-20 xs:text-2xl xs:-mt-12">
+          <p className="bg-bg font-ubuntu w-9/12 mx-auto text-center text-4xl py-4 mt-8 text-gray-800  font-extrabold  xs:text-2xl">
             GALLERY
           </p>
         </Fade>
         <Fade delay={2200} cascade damping={0.7}>
-          <div className="flex flex-wrap min-w-[150px] justify-between p-5 space-y-4 mt-12">
+          <div className="flex flex-wrap min-w-[150px] justify-between p-5 space-y-4 mt-2 xs:flex-col xs:items-center sm:flex-col sm:items-center ">
             {ArchivePicsArr.map((pic) => (
               <Image
                 key={ArchivePicsArr.indexOf(pic)}
@@ -60,21 +49,17 @@ export default Archives;
 export async function getServerSideProps(context) {
   const docRef = doc(db, "Pics", "JqameTrvXjXwfGfUxDTy");
   const docRef1 = doc(db, "Pics", "Logo");
-  const docRef2 = doc(db, "Pics", "ActivitiesBg");
 
   const docSnap = await getDoc(docRef);
   const docSnap1 = await getDoc(docRef1);
-  const docSnap2 = await getDoc(docRef2);
 
   const ArchivePics = docSnap.data();
   const logo = docSnap1.data();
-  const bg = docSnap2.data();
 
   return {
     props: {
       pics: ArchivePics,
       Logo: logo,
-      BG: bg,
     },
   };
 }

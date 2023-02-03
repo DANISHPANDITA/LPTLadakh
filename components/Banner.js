@@ -18,14 +18,11 @@ function Banner({ bannerImgs }) {
           showStatus={false}
         >
           {Bannerimg.map((bb) => (
-            <div key={Bannerimg[bb]}>
-              <Image
-                src={bb}
-                className="w-[500px] h-[620px] xs:h-[250px] sm:h-[380px] md:h-[420px] mx-auto mt-1 rounded-lg"
-                width={500}
-                height={500}
-                alt=""
-              />
+            <div
+              key={Bannerimg[bb]}
+              className="w-full h-[620px] xs:h-[250px] sm:h-[380px] md:h-[420px] mx-auto mt-1 rounded-lg"
+            >
+              <Image src={bb} width={500} height={500} alt="" />
             </div>
           ))}
         </Carousel>
