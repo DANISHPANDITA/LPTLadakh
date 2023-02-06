@@ -7,7 +7,6 @@ import Banner from "../components/Banner";
 import MainCard from "../components/MainCard";
 import CardSmall from "../components/Card";
 import Footer from "../components/Footer";
-import ReactLoading from "react-loading";
 
 export default function Home({
   Logo,
@@ -15,48 +14,35 @@ export default function Home({
   bannerImgs,
   MainCardData,
 }) {
-  if (
-    Object.values(SmallCardInfo).length > 0 &&
-    Object.values(Logo).length > 0 &&
-    Object.values(bannerImgs).length > 0 &&
-    Object.values(MainCardData).length > 0
-  ) {
-    return (
-      <div className="bg-gradient-to-r from-slate-100 via-orange-200 to-slate-100">
-        <Head>
-          <title>Ladakh Phanday Tsogspa</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <Navbar logo={Logo} />
-        <Banner bannerImgs={bannerImgs} />
-        <MainCard CardInfo={MainCardData} />
-        <div className="font-nunito flex flex-wrap xs:flex-col xs:space-y-3 xs:items-center sm:space-y-3 sm:items-center sm:flex-col md:space-y-3 md:items-center md:flex-col lg:space-y-3 lg:items-center justify-between px-4 py-2 mt-4 w-11/12 mx-auto">
-          <CardSmall
-            img={SmallCardInfo.sewa}
-            header={SmallCardInfo.sewaheader}
-            text={SmallCardInfo.sewainfo}
-          />
-          <CardSmall
-            img={SmallCardInfo.sanskar}
-            header={SmallCardInfo.sanskarheader}
-            text={SmallCardInfo.sanskarinfo}
-          />
-          <CardSmall
-            img={SmallCardInfo.ekta}
-            header={SmallCardInfo.ektaheader}
-            text={SmallCardInfo.ektainfo}
-          />
-        </div>
-        <Footer />
+  return (
+    <div className="bg-gradient-to-r from-slate-100 via-orange-200 to-slate-100">
+      <Head>
+        <title>Ladakh Phanday Tsogspa</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Navbar logo={Logo} />
+      <Banner bannerImgs={bannerImgs} />
+      <MainCard CardInfo={MainCardData} />
+      <div className="font-nunito flex flex-wrap xs:flex-col xs:space-y-3 xs:items-center sm:space-y-3 sm:items-center sm:flex-col md:space-y-3 md:items-center md:flex-col lg:space-y-3 lg:items-center justify-between px-4 py-2 mt-4 w-11/12 mx-auto">
+        <CardSmall
+          img={SmallCardInfo.sewa}
+          header={SmallCardInfo.sewaheader}
+          text={SmallCardInfo.sewainfo}
+        />
+        <CardSmall
+          img={SmallCardInfo.sanskar}
+          header={SmallCardInfo.sanskarheader}
+          text={SmallCardInfo.sanskarinfo}
+        />
+        <CardSmall
+          img={SmallCardInfo.ekta}
+          header={SmallCardInfo.ektaheader}
+          text={SmallCardInfo.ektainfo}
+        />
       </div>
-    );
-  } else {
-    return (
-      <div className="h-screen w-screen bg-orange-300">
-        <ReactLoading type="spokes" color="red" height={667} width={375} />{" "}
-      </div>
-    );
-  }
+      <Footer />
+    </div>
+  );
 }
 export async function getServerSideProps(context) {
   const docRef = doc(db, "Pics", "SmallCard");

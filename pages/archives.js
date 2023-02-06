@@ -6,43 +6,36 @@ import { db } from "../components/firebase";
 import Head from "next/head";
 import { Fade } from "react-awesome-reveal";
 import Image from "next/image";
+
 function Archives({ pics, Logo, BG }) {
   var ArchivePicsArr = Object.values(pics);
-  if (ArchivePicsArr.length > 0 && Object.values(Logo).length > 0) {
-    return (
-      <div className="bg-gradient-to-r from-slate-100 via-[#87a0bb] to-slate-100">
-        <Head>
-          <title>Archives</title>
-        </Head>
-        <Navbar logo={Logo} />
-        <Fade delay={2000} top triggerOnce={true}>
-          <p className="bg-bg font-ubuntu w-9/12 mx-auto text-center text-4xl py-4 mt-8 text-gray-800  font-extrabold  xs:text-2xl">
-            GALLERY
-          </p>
-        </Fade>
-        <Fade delay={2200} cascade damping={0.7}>
-          <div className="flex flex-wrap min-w-[150px] justify-between p-5 space-y-4 mt-2 xs:flex-col xs:items-center sm:flex-col sm:items-center ">
-            {ArchivePicsArr.map((pic) => (
-              <Image
-                key={ArchivePicsArr.indexOf(pic)}
-                src={pic}
-                width={400}
-                height={300}
-                alt="Pic"
-              />
-            ))}
-          </div>
-        </Fade>
-        <Footer />
-      </div>
-    );
-  } else {
-    return (
-      <div className="h-screen w-screen">
-        <ReactLoading type="spokes" color="red" height={667} width={375} />{" "}
-      </div>
-    );
-  }
+  return (
+    <div className="bg-gradient-to-r from-slate-100 via-[#87a0bb] to-slate-100">
+      <Head>
+        <title>Archives</title>
+      </Head>
+      <Navbar logo={Logo} />
+      <Fade delay={2000} top triggerOnce={true}>
+        <p className="bg-bg font-ubuntu w-9/12 mx-auto text-center text-4xl py-4 mt-8 text-gray-800  font-extrabold  xs:text-2xl">
+          GALLERY
+        </p>
+      </Fade>
+      <Fade delay={2200} cascade damping={0.7}>
+        <div className="flex flex-wrap min-w-[150px] justify-between p-5 space-y-4 mt-2 xs:flex-col xs:items-center sm:flex-col sm:items-center ">
+          {ArchivePicsArr.map((pic) => (
+            <Image
+              key={ArchivePicsArr.indexOf(pic)}
+              src={pic}
+              width={400}
+              height={300}
+              alt="Pic"
+            />
+          ))}
+        </div>
+      </Fade>
+      <Footer />
+    </div>
+  );
 }
 
 export default Archives;

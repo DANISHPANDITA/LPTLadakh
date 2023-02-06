@@ -19,7 +19,7 @@ function Banner({ bannerImgs }) {
         >
           {Bannerimg.map((bb) => (
             <div
-              key={Bannerimg[bb]}
+              key={Bannerimg.indexOf(bb)}
               className="w-full h-[620px] xs:h-[250px] sm:h-[380px] md:h-[420px] mx-auto mt-1 rounded-lg"
             >
               <Image src={bb} width={500} height={500} alt="" />

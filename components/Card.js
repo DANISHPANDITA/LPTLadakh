@@ -1,12 +1,13 @@
 import Image from "next/image";
 import React from "react";
 import { Fade } from "react-awesome-reveal";
+
 function CardSmall({ img, header, text }) {
   return (
     <div className="font-ubuntu max-w-sm rounded overflow-hidden shadow-xl">
       <Fade bottom triggerOnce={true}>
         <Image
-          className="rounded-lg mx-auto"
+          className="rounded-lg mx-auto hover:opacity-80 hover:scale-105 transition duration-300 ease-in-out"
           src={img}
           width={350}
           height={300}
@@ -19,7 +20,7 @@ function CardSmall({ img, header, text }) {
             {header}
           </div>
         </Fade>
-        <Fade bottom delay={1000} triggerOnce={true}>
+        <Fade bottom delay={500} triggerOnce={true}>
           <p className="text-gray-700 text-base text-justify font-semibold xs:text-sm sm:text-sm md:text-sm">
             {text}
           </p>

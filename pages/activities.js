@@ -1,25 +1,24 @@
 import { doc, getDoc } from "firebase/firestore/lite";
 import Head from "next/head";
-import Image from "next/image";
 import React from "react";
-import { Fade, Slide } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
 import { db } from "../components/firebase";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-function Activities({ BG, ACTIVITIES, Logo }) {
-  if (Object.values(ACTIVITIES).length > 0 && Object.values(Logo).length > 0) {
-    return (
-      <div className="font-ubuntu">
-        <Head>
-          <title>Activities</title>
-        </Head>
-        <Navbar logo={Logo} />
-        <Fade delay={2000} top triggerOnce={true}>
-          <p className="bg-bg font-ubuntu w-9/12 mx-auto text-center text-4xl py-4 mt-8 text-gray-800  font-extrabold  xs:text-2xl">
-            OUR RECENT ACTIVITIES
-          </p>
-        </Fade>
 
+function Activities({ ACTIVITIES, Logo }) {
+  return (
+    <div className="font-ubuntu">
+      <Head>
+        <title>Activities</title>
+      </Head>
+      <Navbar logo={Logo} />
+      <Fade delay={2000} top triggerOnce={true}>
+        <p className="bg-bg font-ubuntu w-9/12 mx-auto text-center text-4xl py-4 mt-8 text-gray-800  font-extrabold  xs:text-2xl">
+          OUR RECENT ACTIVITIES
+        </p>
+      </Fade>
+      <Fade delay={2300} triggerOnce={true}>
         <div className="bg-gray-100 p-4 text-lg mt-4 mb-4 flex flex-col space-y-3 text-justify w-10/12 mx-auto text-gray-800 font-semibold xs:text-sm sm:text-base md:text-base">
           {Object.values(ACTIVITIES).map((activity) => (
             <Fade cascade damping={0.3} triggerOnce={true}>
@@ -27,16 +26,10 @@ function Activities({ BG, ACTIVITIES, Logo }) {
             </Fade>
           ))}
         </div>
-        <Footer />
-      </div>
-    );
-  } else {
-    return (
-      <div className="h-screen w-screen">
-        <ReactLoading type="spokes" color="red" height={667} width={375} />{" "}
-      </div>
-    );
-  }
+      </Fade>
+      <Footer />
+    </div>
+  );
 }
 export default Activities;
 export async function getServerSideProps(context) {
