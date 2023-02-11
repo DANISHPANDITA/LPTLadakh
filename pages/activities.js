@@ -8,18 +8,18 @@ import Navbar from "../components/Navbar";
 
 function Activities({ ACTIVITIES, Logo }) {
   return (
-    <div className="font-ubuntu">
+    <div style={{ fontFamily: "Signika Negative" }}>
       <Head>
         <title>Activities</title>
       </Head>
       <Navbar logo={Logo} />
       <Fade delay={2000} top triggerOnce={true}>
-        <p className="bg-bg font-ubuntu w-9/12 mx-auto text-center text-4xl py-4 mt-8 text-gray-800  font-extrabold  xs:text-2xl">
+        <p className="bg-bg w-9/12 mx-auto text-center text-4xl py-4 mt-8 text-gray-800  font-extrabold  xs:text-2xl">
           OUR RECENT ACTIVITIES
         </p>
       </Fade>
       <Fade delay={2300} triggerOnce={true}>
-        <div className="bg-gray-100 p-4 text-lg mt-4 mb-4 flex flex-col space-y-3 text-justify w-10/12 mx-auto text-gray-800 font-semibold xs:text-sm sm:text-base md:text-base">
+        <div className="bg-gray-100 p-4 text-lg mt-4 mb-4 flex flex-col space-y-3 text-justify w-10/12 mx-auto text-gray-800 font-semibold xs:text-base sm:text-base md:text-base">
           {Object.values(ACTIVITIES).map((activity) => (
             <Fade cascade damping={0.3} triggerOnce={true}>
               <p>&#8226; {activity}</p>

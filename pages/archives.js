@@ -10,13 +10,16 @@ import Image from "next/image";
 function Archives({ pics, Logo, BG }) {
   var ArchivePicsArr = Object.values(pics);
   return (
-    <div className="bg-gradient-to-r from-slate-100 via-[#87a0bb] to-slate-100">
+    <div
+      style={{ fontFamily: "Signika Negative" }}
+      className="bg-gradient-to-r from-slate-100 via-[#87a0bb] to-slate-100"
+    >
       <Head>
         <title>Archives</title>
       </Head>
       <Navbar logo={Logo} />
       <Fade delay={2000} top triggerOnce={true}>
-        <p className="bg-bg font-ubuntu w-9/12 mx-auto text-center text-4xl py-4 mt-8 text-gray-800  font-extrabold  xs:text-2xl">
+        <p className="bg-bg w-9/12 mx-auto text-center text-4xl py-4 mt-8 text-gray-800  font-extrabold  xs:text-2xl">
           GALLERY
         </p>
       </Fade>

@@ -28,9 +28,12 @@ function Footer() {
     fetchLinks();
   }, []);
   return (
-    <div className="font-nunito bg-gradient-to-r from-gray-800 via-gray-600 to-gray-800 text-gray-100  flex flex-row sm:flex-col xs:flex-col md:flex-col justify-between p-4">
+    <div
+      style={{ fontFamily: "Signika Negative" }}
+      className="bg-gradient-to-r from-gray-800 via-gray-600 to-gray-800 text-gray-100  flex flex-row sm:flex-col xs:flex-col md:flex-col justify-between p-4"
+    >
       <div className="w-1/4 lg:w-1/2 xl:w-1/2 md:w-full xs:w-full sm:w-full text-base xs:text-xs sm:text-xs md:text-base">
-        <p className="font-semibold mb-3 text-lg xs:text-sm sm:text-base md:text-base">
+        <p className="font-extrabold mb-3 text-lg xs:text-sm sm:text-base md:text-base">
           Contact us
         </p>
         <p>{Contacts.Address}</p>
@@ -58,7 +61,7 @@ function Footer() {
               window.open(Contacts.Fb, "_blank");
             }}
           >
-            <i className="fa-brands fa-facebook-f"></i>
+            <i aria-label="FBIcon" className="fa-brands fa-facebook-f"></i>
           </IconButton>
         </Tooltip>
         <Image

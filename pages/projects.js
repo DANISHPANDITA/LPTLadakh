@@ -9,13 +9,13 @@ import Image from "next/image";
 
 function Projects({ Projects, logo }) {
   return (
-    <div className="font-ubuntu bg-gray-100">
+    <div style={{ fontFamily: "Signika Negative" }} className="bg-gray-100">
       <Head>
         <title>Projects</title>
       </Head>
       <Navbar logo={logo} />
       <Fade delay={2000} bottom triggerOnce={true}>
-        <p className="bg-bg font-ubuntu w-9/12 mx-auto text-center text-4xl py-4 mt-8 text-gray-800  font-extrabold  xs:text-2xl">
+        <p className="bg-bg w-9/12 mx-auto text-center text-4xl py-4 mt-8 text-gray-800  font-extrabold  xs:text-2xl">
           OUR PROJECTS
         </p>
       </Fade>

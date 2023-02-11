@@ -23,7 +23,10 @@ export default function Home({
       <Navbar logo={Logo} />
       <Banner bannerImgs={bannerImgs} />
       <MainCard CardInfo={MainCardData} />
-      <div className="font-nunito flex flex-wrap xs:flex-col xs:space-y-3 xs:items-center sm:space-y-3 sm:items-center sm:flex-col md:space-y-3 md:items-center md:flex-col lg:space-y-3 lg:items-center justify-between px-4 py-2 mt-4 w-11/12 mx-auto">
+      <div
+        style={{ fontFamily: "Signika Negative" }}
+        className="flex flex-wrap xs:flex-col xs:space-y-3 xs:items-center sm:space-y-3 sm:items-center sm:flex-col md:space-y-3 md:items-center md:flex-col lg:space-y-3 lg:items-center justify-between px-4 py-2 mt-4 w-11/12 mx-auto"
+      >
         <CardSmall
           img={SmallCardInfo.sewa}
           header={SmallCardInfo.sewaheader}

@@ -4,7 +4,10 @@ import { Fade } from "react-awesome-reveal";
 
 function CardSmall({ img, header, text }) {
   return (
-    <div className="font-ubuntu max-w-sm rounded overflow-hidden shadow-xl">
+    <div
+      style={{ fontFamily: "Signika Negative" }}
+      className="max-w-sm rounded overflow-hidden shadow-xl"
+    >
       <Fade bottom triggerOnce={true}>
         <Image
           className="rounded-lg mx-auto hover:opacity-80 hover:scale-105 transition duration-300 ease-in-out"
